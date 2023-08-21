@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function ProductList(props) {
 
-  const {deleteProduct, productUpdate, products} = props
+  const {deleteProduct, products} = props
 
   return (
     <div className='container'>
@@ -13,7 +13,7 @@ function ProductList(props) {
           <li key={product.ID}>
             {product.name} - {product.price}
             <button onClick={() => deleteProduct(product.ID)}>Delete</button>
-            <button onClick={() => productUpdate(product.ID)}>Update</button>
+            {/* <button onClick={() => productUpdate(product.ID)}>Update</button> */}
           </li>
         ))}
       </ul>

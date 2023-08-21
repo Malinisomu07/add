@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Crud from './components/Crud';
 import ProductList from './components/ProductList';
@@ -76,20 +76,17 @@ function App() {
     });
   };
 
-  const productUpdate = (productID) => {
-    const updatedName = prompt('Enter updated name:');
-    const updatedPrice = prompt('Enter updated price:');
-
-    if (updatedName !== null && updatedPrice !== null) {
-      updateProduct(productID, { Name: updatedName, price: updatedPrice });
-    }
-  };
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Crud setNewProduct={setNewProduct} newProduct={newProduct} addProduct={addProduct} />} />
-        <Route path="/ProductList" element={<ProductList products={products} productUpdate={productUpdate} deleteProduct={deleteProduct} />} />
+        <Route path="/" element={ <Crud
+              setNewProduct={setNewProduct}
+              newProduct={newProduct}
+              addProduct={addProduct}
+              products={products}
+              updateProduct={updateProduct} // Pass the updateProduct function
+            />} />
+        <Route path="/ProductList" element={<ProductList products={products}  deleteProduct={deleteProduct} />} />
       </Routes>
 
       {/* <div>
