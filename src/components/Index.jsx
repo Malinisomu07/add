@@ -1,7 +1,7 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Crud from './components/Crud';
-import ProductList from './components/ProductList';
+import Crud from './Crud';
+import ProductList from './ProductList';
 
 const ProductDetails = [];
 
